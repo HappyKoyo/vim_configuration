@@ -98,3 +98,17 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 inoremap <silent>jj <ESC>
 set number
+
+"---EnvInfoCode---"
+
+command! EnvInfo call EnvInfo()
+function! EnvInfo()
+    " carnel version.
+    execute ':r! uname -r'
+    " python version.
+    execute ':r! python -V'
+    " Os version.
+    execute ':r! cat /etc/lsb-release'
+    " ros version.
+    execute ':r! rosversion -d'
+endfunction
