@@ -53,6 +53,7 @@ set clipboard=unnamed
 nnoremap Y y$
 nnoremap + <C-a>
 nnoremap - <C-x>
+au BufNewFile,BufRead *.launch setf xml
 
 "---Visualization---"
 set runtimepath+=$HOME/.vim

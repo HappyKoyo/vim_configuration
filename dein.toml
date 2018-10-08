@@ -13,3 +13,4 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
