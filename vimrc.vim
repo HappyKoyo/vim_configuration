@@ -5,7 +5,6 @@
 "   \_/ |_|_| |_| |_|
 "                  
 "
-"
 
 if has('nvim')
     "dein init
@@ -72,6 +71,24 @@ set title
 "set cursorcolumn
 set guioptions+=R
 map <C-n> :NERDTreeToggle<CR>
+" open-browser.vim 
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" PlantUML
+au FileType plantuml let g:plantuml_previewer#plantuml_jar_path = get(
+    \  matchlist(system('cat `which plantuml` | grep plantuml.jar'), '\v.*\s[''"]?(\S+plantuml\.jar).*'),
+    \  1,
+    \  0
+    \)
+
+" call previm
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+nnoremap <silent> <C-p> :PrevimOpen<CR>
 
 "---Movement---"
 noremap j gj
@@ -93,7 +110,6 @@ set ignorecase
 set smartcase
 set incsearch
 
-
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -113,3 +129,4 @@ function! EnvInfo()
     " ros version.
     execute ':r! rosversion -d'
 endfunction
+

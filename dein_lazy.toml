@@ -27,12 +27,24 @@ on_i = 1
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = ['markdown','mkd']
 
+# マークダウンのシンタックスハイライト
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown','mkd']#このファイル形式で開いたときのみロードされる
+
 # 編集中のMarkdownファイルのプレビューを作成する
 [[plugins]]
 repo = 'kannokanno/previm'
-on_ft = ['markdown','mkd']
+on_ft = ['markdown','mkd']#このファイル形式で開いたときのみロードされる
 
 # プレビューをブラウザで開いてくれる
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-on_ft = ['markdown','mkd']
+
+# vimでフローチャートとかシーケンス図を書くためのUMLをサポート
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+
+# nvimでPlantUMLを開く
+[[plugins]]
+repo = 'weirongxu/plantuml-previewer.vim'
